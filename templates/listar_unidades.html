@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listar Unidades</title>
+</head>
+<body>
+    <h1>Listar Unidades</h1>
+    <table>
+        <tr>
+            <th>Número</th>
+            <th>Proprietário</th>
+            <th>Telefone</th>
+            <th>Email</th>
+        </tr>
+        {% for unidade in unidades %}
+        <tr>
+            <td>{{ unidade.numero }}</td>
+            <td>{{ unidade.proprietario }}</td>
+            <td>{{ unidade.telefone }}</td>
+            <td>{{ unidade.email }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{{ url_for('index') }}">Voltar</a>
+</body>
+</html>
+

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histórico de Encomendas</title>
+</head>
+<body>
+    <h1>Histórico de Encomendas</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Unidade</th>
+            <th>Data de Recebimento</th>
+            <th>Porteiro</th>
+            <th>Tipo</th>
+            <th>Data de Entrega</th>
+            <th>Morador</th>
+            <th>Porteiro que Entregou</th>
+        </tr>
+        {% for encomenda in encomendas %}
+        <tr>
+            <td>{{ encomenda.id }}</td>
+            <td>{{ encomenda.unidade }}</td>
+            <td>{{ encomenda.data_recebimento }}</td>
+            <td>{{ encomenda.porteiro }}</td>
+            <td>{{ encomenda.tipo }}</td>
+            <td>{{ encomenda.data_entrega }}</td>
+            <td>{{ encomenda.morador }}</td>
+            <td>{{ encomenda.porteiro_entrega }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{{ url_for('index') }}">Voltar</a>
+</body>
+</html>

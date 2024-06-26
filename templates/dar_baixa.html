@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dar Baixa em Encomenda</title>
+</head>
+<body>
+    <h1>Dar Baixa em Encomenda</h1>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        <label for="id">ID da Encomenda:</label>
+        {{ form.id }}
+        <label for="data_entrega">Data de Entrega:</label>
+        {{ form.data_entrega }}
+        <label for="morador">Morador:</label>
+        {{ form.morador }}
+        <label for="porteiro_entrega">Porteiro que Entregou:</label>
+        {{ form.porteiro_entrega }}
+        <button type="submit">Dar Baixa</button>
+    </form>
+    <a href="{{ url_for('index') }}">Voltar</a>
+</body>
+</html>

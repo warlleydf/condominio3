@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Encomenda</title>
+</head>
+<body>
+    <h1>Registrar Encomenda</h1>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        <label for="unidade">Unidade:</label>
+        {{ form.unidade }}
+        <label for="data_recebimento">Data de Recebimento:</label>
+        {{ form.data_recebimento }}
+        <label for="porteiro">Porteiro:</label>
+        {{ form.porteiro }}
+        <label for="tipo">Tipo:</label>
+        {{ form.tipo }}
+        <button type="submit">Registrar</button>
+    </form>
+    <a href="{{ url_for('index') }}">Voltar</a>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alterar Unidades</title>
+</head>
+<body>
+    <h1>Alterar Unidades</h1>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        <label for="numero">Número da Unidade:</label>
+        {{ form.numero }}
+        <label for="proprietario">Proprietário:</label>
+        {{ form.proprietario }}
+        <label for="telefone">Telefone:</label>
+        {{ form.telefone }}
+        <label for="email">Email:</label>
+        {{ form.email }}
+        <button type="submit">Salvar</button>
+    </form>
+    <table>
+        <tr>
+            <th>Número</th>
+            <th>Proprietário</th>
+            <th>Telefone</th>
+            <th>Email</th>
+        </tr>
+        {% for unidade in unidades %}
+        <tr>
+            <td>{{ unidade.numero }}</td>
+            <td>{{ unidade.proprietario }}</td>
+            <td>{{ unidade.telefone }}</td>
+            <td>{{ unidade.email }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{{ url_for('index') }}">Voltar</a>
+</body>
+</html>
